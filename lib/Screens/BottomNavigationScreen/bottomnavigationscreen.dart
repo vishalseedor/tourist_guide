@@ -2,7 +2,9 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:touirst_guide_project/CategoryScreen/categoryscreen.dart';
-import 'package:touirst_guide_project/Screens/ViewPackageScreen/viewpackagescreen.dart';
+import 'package:touirst_guide_project/Screens/PackageBookingpage/pages/orderscreen.dart';
+import 'package:touirst_guide_project/Screens/ProfileScreen/profilescreen.dart';
+import 'package:touirst_guide_project/Screens/ViewPackageScreen/pages/viewpackagescreen.dart';
 
 
 
@@ -15,7 +17,7 @@ class BottomNavigationScreen extends StatefulWidget {
 }
 
 class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
-  final pages = [const ViewPackageScreen(), const CategoryScreen(), const Text('jjjjjj'), const Text('llllll')];
+  final pages = [const ViewPackageScreen(), const CategoryScreen(), const MyOrdersScreen(), const ProfilePage()];
   int currentPageIndex = 0;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -54,7 +56,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
     ),
     BottomNavigationBarItem(
       icon: Icon(Icons.event,color:  Colors.grey,),
-      label: "Events",
+      label: "Booking",
       activeIcon: Icon(Icons.event_outlined,color: Colors.green),
     ),
     BottomNavigationBarItem(

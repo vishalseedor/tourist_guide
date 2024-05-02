@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:touirst_guide_project/Helpers/providers.dart';
+import 'package:touirst_guide_project/Helpers/routes.dart';
 import 'package:touirst_guide_project/Screens/LoginScreen/loginscreen.dart';
 import 'package:touirst_guide_project/Screens/homescreen.dart';
 import 'package:touirst_guide_project/onboard.dart';
@@ -16,15 +19,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        textTheme: GoogleFonts.abhayaLibreTextTheme(),
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return MultiProvider(
+      providers: multiprovider,
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          textTheme: GoogleFonts.abhayaLibreTextTheme(),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home:const NewLoginScreen(),
+        routes: customRoutes,
       ),
-      home:const NewLoginScreen()
     );
   }
 }
